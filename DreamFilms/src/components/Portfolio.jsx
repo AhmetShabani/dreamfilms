@@ -1,5 +1,5 @@
 import { Container, Row, Col } from 'react-bootstrap'
-import '../styles/portfolio.css'
+import '../assets/styles/portfolio.css'
 
 const projects = [
   {

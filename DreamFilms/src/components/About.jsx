@@ -1,5 +1,5 @@
 import { Container, Row, Col } from 'react-bootstrap'
-import '../styles/about.css'
+import '../assets/styles/about.css'
 
 function About() {
   return (

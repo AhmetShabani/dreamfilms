@@ -1,5 +1,5 @@
 import { Container, Row, Col } from 'react-bootstrap'
-import '../styles/hero.css'
+import '../assets/styles/hero.css'
 
 function Hero() {
   return (

@@ -1,5 +1,5 @@
 import { Container, Row, Col } from 'react-bootstrap'
-import '../styles/contact.css'
+import '../assets/styles/contact.css'
 
 function Contact() {
   return (

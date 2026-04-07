@@ -1,5 +1,5 @@
 import { Container, Row, Col } from 'react-bootstrap'
-import '../styles/services.css'
+import '../assets/styles/services.css'
 
 function Services() {
   return (
