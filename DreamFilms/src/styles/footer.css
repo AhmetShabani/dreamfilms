@@ -1,0 +1,102 @@
+.footer-section {
+  background-color: #0a0a0a;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 5rem;
+}
+
+.footer-logo {
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.footer-accent {
+  color: #E8392A;
+}
+
+.footer-desc {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.85rem;
+  line-height: 1.8;
+  font-weight: 300;
+  max-width: 280px;
+}
+
+.footer-heading {
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.45);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 300;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #E8392A;
+}
+
+.footer-contact li {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.85rem;
+  font-weight: 300;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.footer-socials a {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.4rem 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.footer-socials a:hover {
+  border-color: #E8392A;
+  color: #E8392A;
+}
+
+.footer-top {
+  padding-bottom: 4rem;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 1.5rem 0;
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 0.8rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin: 0;
+}

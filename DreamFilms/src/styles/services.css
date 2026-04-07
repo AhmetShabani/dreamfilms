@@ -1,0 +1,47 @@
+.services-section {
+  background-color: #000000;
+  padding: 8rem 0;
+}
+
+.services-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -1px;
+  margin-bottom: 0;
+}
+
+.service-card {
+  background-color: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 2.5rem 2rem;
+  height: 100%;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.service-card:hover {
+  border-color: #E8392A;
+  transform: translateY(-5px);
+}
+
+.service-icon {
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+}
+
+.service-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.service-desc {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.9rem;
+  line-height: 1.8;
+  font-weight: 300;
+  margin: 0;
+}

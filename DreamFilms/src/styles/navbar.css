@@ -1,0 +1,55 @@
+.dreamfilms-nav {
+  background-color: rgba(0, 0, 0, 0.85) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 1rem 0;
+  transition: all 0.3s ease;
+}
+
+.brand-logo {
+  color: #ffffff !important;
+  font-size: 1.4rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.brand-accent {
+  color: #E8392A;
+  margin-left: 2px;
+}
+
+.dreamfilms-nav .nav-link {
+  color: rgba(255, 255, 255, 0.75) !important;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+  padding: 0.5rem 1rem !important;
+}
+
+.dreamfilms-nav .nav-link:hover {
+  color: #E8392A !important;
+}
+
+.nav-cta {
+  background-color: #E8392A;
+  color: #ffffff !important;
+  border-radius: 2px;
+  padding: 0.5rem 1.2rem !important;
+  transition: background-color 0.3s ease !important;
+}
+
+.nav-cta:hover {
+  background-color: #c42d20 !important;
+  color: #ffffff !important;
+}
+
+.custom-toggler {
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.custom-toggler .navbar-toggler-icon {
+  filter: invert(1);
+}
