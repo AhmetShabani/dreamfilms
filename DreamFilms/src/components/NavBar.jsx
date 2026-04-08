@@ -58,7 +58,7 @@ const NavBar = forwardRef((props, ref) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="nav-social-icon"
+                className="nav-social-icon d-flex align-items-center"
               >
                 {icon}
               </a>
