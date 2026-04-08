@@ -1,8 +1,8 @@
 import { Container, Row, Col } from 'react-bootstrap'
-import '../assets/styles/portfolio.css'
 import { Link } from 'react-router-dom'
+import '../assets/styles/portfoliopage.css'
 
-const projects = [
+const allProjects = [
   {
     id: 1,
     type: 'Film',
@@ -39,22 +39,52 @@ const projects = [
     title: 'Rise Up',
     image: 'https://images.unsplash.com/photo-1429514513361-8fa32282fd5f?w=800&q=80',
   },
+  {
+    id: 7,
+    type: 'Film',
+    title: 'Silent Roads',
+    image: 'https://images.unsplash.com/photo-1500099817043-86d46000d58f?w=800&q=80',
+  },
+  {
+    id: 8,
+    type: 'Music Video',
+    title: 'Dark Hours',
+    image: 'https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800&q=80',
+  },
+  {
+    id: 9,
+    type: 'Film',
+    title: 'The Return',
+    image: 'https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=800&q=80',
+  },
 ]
 
-function Portfolio() {
+function PortfolioPage() {
   return (
-    <section className="portfolio-section" id="portfolio">
-      <Container>
-        <Row className="justify-content-center text-center mb-5">
-          <Col lg={6}>
-            <p className="section-tagline">Our Work</p>
-            <h2 className="portfolio-title">
-              LATEST <span className="text-accent">PROJECTS</span>
-            </h2>
-          </Col>
-        </Row>
+    <div className="portfolio-page">
+      <div className="portfolio-page-hero">
+        <Container>
+          <Link to="/" className="back-link">← Back to Home</Link>
+          <p className="section-tagline">Our Work</p>
+          <h1 className="portfolio-page-title">
+            ALL <span className="text-accent">PROJECTS</span>
+          </h1>
+        </Container>
+      </div>
+
+      <div className="portfolio-page-filter">
+        <Container>
+          <div className="filter-buttons">
+            <button className="filter-btn active">All</button>
+            <button className="filter-btn">Films</button>
+            <button className="filter-btn">Music Videos</button>
+          </div>
+        </Container>
+      </div>
+
+      <Container className="portfolio-page-grid">
         <Row className="g-4">
-          {projects.map((project) => (
+          {allProjects.map((project) => (
             <Col lg={4} md={6} key={project.id}>
               <div className="portfolio-card">
                 <img
@@ -70,16 +100,12 @@ function Portfolio() {
             </Col>
           ))}
         </Row>
-              <Row className="mt-5">
-        <Col className="text-center">
-          <Link to="/portfolio" className="btn-primary-custom">
-            See More
-          </Link>
-        </Col>
-      </Row>
       </Container>
-    </section>
+
+      <Footer />
+    </div>
   )
 }
 
-export default Portfolio
+import Footer from '../components/Footer'
+export default PortfolioPage
