@@ -7,7 +7,7 @@ function Hero() {
       <div className="hero-overlay" />
       <Container className="hero-content">
         <Row className="min-vh-100 align-items-center">
-          <Col lg={8}>
+          <Col lg={8} md={10} xs={12}>
             <p className="hero-tagline">Film & Music Production</p>
             <h1 className="hero-title">
               WE BRING YOUR <br />

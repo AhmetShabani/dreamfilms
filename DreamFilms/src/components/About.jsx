@@ -5,8 +5,8 @@ function About() {
   return (
     <section className="about-section" id="about">
       <Container>
-        <Row className="align-items-center">
-          <Col lg={6} className="about-image-col">
+        <Row className="align-items-center g-4">
+          <Col lg={6} md={12} className="about-image-col">
             <div className="about-image-wrapper">
               <img
                 src="https://images.unsplash.com/photo-1524712245354-2c4e5e7121c0?w=800&q=80"
@@ -16,7 +16,7 @@ function About() {
               <div className="about-image-accent" />
             </div>
           </Col>
-          <Col lg={6} className="about-text-col">
+          <Col lg={6} md={12} className="about-text-col">
             <p className="section-tagline">Who We Are</p>
             <h2 className="about-title">
               STORYTELLING <br />THROUGH THE <br />

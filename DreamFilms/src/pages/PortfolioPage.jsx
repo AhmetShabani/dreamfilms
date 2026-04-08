@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import Footer from '../components/Footer'
 import '../assets/styles/portfoliopage.css'
 
 const allProjects = [
@@ -59,9 +61,19 @@ const allProjects = [
   },
 ]
 
+const filters = ['All', 'Film', 'Music Video']
+
 function PortfolioPage() {
+  const [activeFilter, setActiveFilter] = useState('All')
+
+  const filtered = activeFilter === 'All'
+    ? allProjects
+    : allProjects.filter((p) => p.type === activeFilter)
+
   return (
     <div className="portfolio-page">
+
+      {/* Hero */}
       <div className="portfolio-page-hero">
         <Container>
           <Link to="/" className="back-link">← Back to Home</Link>
@@ -72,20 +84,28 @@ function PortfolioPage() {
         </Container>
       </div>
 
+      {/* Filter */}
       <div className="portfolio-page-filter">
         <Container>
           <div className="filter-buttons">
-            <button className="filter-btn active">All</button>
-            <button className="filter-btn">Films</button>
-            <button className="filter-btn">Music Videos</button>
+            {filters.map((f) => (
+              <button
+                key={f}
+                className={`filter-btn ${activeFilter === f ? 'active' : ''}`}
+                onClick={() => setActiveFilter(f)}
+              >
+                {f}
+              </button>
+            ))}
           </div>
         </Container>
       </div>
 
+      {/* Grid */}
       <Container className="portfolio-page-grid">
-        <Row className="g-4">
-          {allProjects.map((project) => (
-            <Col lg={4} md={6} key={project.id}>
+        <Row className="g-3 g-md-4">
+          {filtered.map((project) => (
+            <Col lg={4} md={6} xs={12} key={project.id}>
               <div className="portfolio-card">
                 <img
                   src={project.image}
@@ -107,5 +127,4 @@ function PortfolioPage() {
   )
 }
 
-import Footer from '../components/Footer'
 export default PortfolioPage

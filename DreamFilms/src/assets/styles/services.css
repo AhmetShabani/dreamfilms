@@ -45,3 +45,52 @@
   font-weight: 300;
   margin: 0;
 }
+
+/* ── Tablet ── */
+@media (max-width: 991px) {
+  .services-section {
+    padding: 5rem 0;
+  }
+
+  .service-card {
+    padding: 2rem 1.75rem;
+  }
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .services-section {
+    padding: 4rem 0;
+  }
+
+  .service-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .service-card:hover {
+    transform: none;
+  }
+
+  .service-name {
+    font-size: 1rem;
+  }
+}
+
+/* ── Small mobile ── */
+@media (max-width: 480px) {
+  .services-section {
+    padding: 3rem 0;
+  }
+
+  .service-card {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .service-icon {
+    font-size: 1.75rem;
+  }
+
+  .service-desc {
+    font-size: 0.85rem;
+  }
+}

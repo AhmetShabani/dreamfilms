@@ -5,16 +5,20 @@ function Services() {
   return (
     <section className="services-section" id="services">
       <Container>
+
+        {/* Header */}
         <Row className="justify-content-center text-center mb-5">
-          <Col lg={6}>
+          <Col lg={6} md={8} xs={12}>
             <p className="section-tagline">What We Do</p>
             <h2 className="services-title">
               OUR <span className="text-accent">SERVICES</span>
             </h2>
           </Col>
         </Row>
-        <Row className="g-4">
-          <Col lg={4} md={6}>
+
+        {/* Cards */}
+        <Row className="g-3 g-md-4">
+          <Col lg={4} md={6} xs={12}>
             <div className="service-card">
               <div className="service-icon">🎬</div>
               <h4 className="service-name">Film Production</h4>
@@ -24,7 +28,7 @@ function Services() {
               </p>
             </div>
           </Col>
-          <Col lg={4} md={6}>
+          <Col lg={4} md={6} xs={12}>
             <div className="service-card">
               <div className="service-icon">🎵</div>
               <h4 className="service-name">Music Videos</h4>
@@ -34,7 +38,7 @@ function Services() {
               </p>
             </div>
           </Col>
-          <Col lg={4} md={6}>
+          <Col lg={4} md={6} xs={12}>
             <div className="service-card">
               <div className="service-icon">✂️</div>
               <h4 className="service-name">Post Production</h4>
@@ -45,6 +49,7 @@ function Services() {
             </div>
           </Col>
         </Row>
+
       </Container>
     </section>
   )

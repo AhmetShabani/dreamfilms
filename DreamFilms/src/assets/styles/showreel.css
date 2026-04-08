@@ -26,6 +26,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding: 1rem;
 }
 
 .showreel-content {
@@ -39,4 +40,29 @@
   font-weight: 900;
   color: #ffffff;
   letter-spacing: -1px;
+}
+
+/* ── Tablet ── */
+@media (max-width: 991px) {
+  .showreel-section {
+    height: 70vh;
+  }
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .showreel-section {
+    height: 60vh;
+  }
+
+  .showreel-title {
+    letter-spacing: 0;
+  }
+}
+
+/* ── Small mobile ── */
+@media (max-width: 480px) {
+  .showreel-section {
+    height: 50vh;
+  }
 }

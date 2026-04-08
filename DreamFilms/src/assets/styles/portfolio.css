@@ -64,3 +64,53 @@
   text-transform: uppercase;
   margin: 0;
 }
+
+/* ── Tablet ── */
+@media (max-width: 991px) {
+  .portfolio-section {
+    padding: 5rem 0;
+  }
+
+  .portfolio-image {
+    height: 260px;
+  }
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .portfolio-section {
+    padding: 4rem 0;
+  }
+
+  .portfolio-image {
+    height: 240px;
+  }
+
+  .portfolio-name {
+    font-size: 1rem;
+  }
+}
+
+/* ── Small mobile ── */
+@media (max-width: 480px) {
+  .portfolio-section {
+    padding: 3rem 0;
+  }
+
+  .portfolio-image {
+    height: 220px;
+  }
+
+  .portfolio-overlay {
+    padding: 1rem;
+  }
+
+  .portfolio-name {
+    font-size: 0.95rem;
+  }
+
+  .portfolio-type {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+  }
+}

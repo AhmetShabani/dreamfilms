@@ -1,6 +1,6 @@
 import { Container, Row, Col } from 'react-bootstrap'
-import '../assets/styles/portfolio.css'
 import { Link } from 'react-router-dom'
+import '../assets/styles/portfolio.css'
 
 const projects = [
   {
@@ -45,17 +45,21 @@ function Portfolio() {
   return (
     <section className="portfolio-section" id="portfolio">
       <Container>
+
+        {/* Header */}
         <Row className="justify-content-center text-center mb-5">
-          <Col lg={6}>
+          <Col lg={6} md={8} xs={12}>
             <p className="section-tagline">Our Work</p>
             <h2 className="portfolio-title">
               LATEST <span className="text-accent">PROJECTS</span>
             </h2>
           </Col>
         </Row>
-        <Row className="g-4">
+
+        {/* Grid */}
+        <Row className="g-3 g-md-4">
           {projects.map((project) => (
-            <Col lg={4} md={6} key={project.id}>
+            <Col lg={4} md={6} xs={12} key={project.id}>
               <div className="portfolio-card">
                 <img
                   src={project.image}
@@ -70,13 +74,16 @@ function Portfolio() {
             </Col>
           ))}
         </Row>
-              <Row className="mt-5">
-        <Col className="text-center">
-          <Link to="/portfolio" className="btn-primary-custom">
-            See More
-          </Link>
-        </Col>
-      </Row>
+
+        {/* See More */}
+        <Row className="mt-5">
+          <Col xs={12} className="text-center">
+            <Link to="/portfolio" className="btn-primary-custom">
+              See More
+            </Link>
+          </Col>
+        </Row>
+
       </Container>
     </section>
   )

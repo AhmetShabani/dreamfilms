@@ -9,6 +9,7 @@ function Showreel() {
         muted
         loop
         playsInline
+        preload="metadata"
       >
         <source src="/showreel.mp4" type="video/mp4" />
       </video>
