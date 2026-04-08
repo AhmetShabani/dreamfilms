@@ -1,15 +1,27 @@
 import { Container, Row, Col } from 'react-bootstrap'
 import '../assets/styles/footer.css'
+import { FaInstagram, FaFacebookF, FaYoutube } from 'react-icons/fa'
 
 function Footer() {
+  const socials = [
+ { icon: <FaInstagram />, href: 'https://instagram.com/dreamfilms.ks', label: 'Instagram' },
+  { icon: <FaFacebookF />, href: 'https://www.facebook.com/DreamFilms.ks', label: 'Facebook' },
+  { icon: <FaYoutube />, href: 'https://youtube.com/', label: 'YouTube' },
+]
   return (
+    
     <footer className="footer-section">
       <Container>
         <Row className="footer-top">
           <Col lg={4} md={6} className="mb-4 mb-lg-0">
-            <h4 className="footer-logo">
-              DREAMFILMS<span className="footer-accent">▪</span>
-            </h4>
+            <div className="footer-logo">
+              DREAMFILMS
+              <img
+                src="/favicon.png"
+                alt="DreamFilms Logo"
+                className="footer-logo-img"
+              />
+            </div>
             <p className="footer-desc">
               A creative production company specializing in films and music
               videos. We turn ideas into visual stories.
@@ -41,9 +53,17 @@ function Footer() {
               <li>✉️ hello@dreamfilms.com</li>
             </ul>
             <div className="footer-socials">
-              <a href="#">IG</a>
-              <a href="#">YT</a>
-              <a href="#">FB</a>
+              {socials.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
+                >
+                  {social.icon}
+                </a>
+              ))}
             </div>
           </Col>
         </Row>

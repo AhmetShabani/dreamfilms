@@ -14,7 +14,7 @@ function Showreel() {
       </video>
       <div className="showreel-overlay">
         <div className="showreel-content">
-          <p className="section-tagline">Our Showreel</p>
+          <p className="section-tagline">DreamFilms</p>
           <h2 className="showreel-title">
             SEE THE <span className="text-accent">WORK</span>
           </h2>

@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import NavBar from './components/NavBar'
 import Hero from './components/Hero'
@@ -8,11 +9,26 @@ import Portfolio from './components/Portfolio'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import PortfolioPage from './pages/PortfolioPage'
+import LoadingScreen from './components/LoadingScreen'
 
 function App() {
+  const [loading, setLoading] = useState(true)
+  const [visible, setVisible] = useState(true)
+  const navRef = useRef(null)
+
+  useEffect(() => {
+    const fadeTimer = setTimeout(() => setLoading(false), 1500)
+    const removeTimer = setTimeout(() => setVisible(false), 2000)
+    return () => {
+      clearTimeout(fadeTimer)
+      clearTimeout(removeTimer)
+    }
+  }, [])
+
   return (
     <BrowserRouter>
-      <NavBar />
+      {visible && <LoadingScreen fadeOut={!loading} navRef={navRef} />}
+      <NavBar ref={navRef} />
       <Routes>
         <Route path="/" element={
           <>

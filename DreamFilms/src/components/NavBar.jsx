@@ -1,12 +1,13 @@
+import { forwardRef } from 'react'
 import { Navbar, Nav, Container } from 'react-bootstrap'
 import { FaInstagram, FaFacebookF, FaYoutube } from 'react-icons/fa'
 import useScrollToSection from '../hooks/useScrollToSection'
 import '../assets/styles/navbar.css'
 
 const socials = [
-  { icon: <FaInstagram />, href: 'https://instagram.com/yourhandle', label: 'Instagram' },
-  { icon: <FaFacebookF />, href: 'https://facebook.com/yourpage', label: 'Facebook' },
-  { icon: <FaYoutube />, href: 'https://youtube.com/yourchannel', label: 'YouTube' },
+  { icon: <FaInstagram />, href: 'https://instagram.com/dreamfilms.ks', label: 'Instagram' },
+  { icon: <FaFacebookF />, href: 'https://www.facebook.com/DreamFilms.ks', label: 'Facebook' },
+  { icon: <FaYoutube />, href: 'https://youtube.com/', label: 'YouTube' },
 ]
 
 const navLinks = [
@@ -16,13 +17,14 @@ const navLinks = [
   { label: 'Contact Us', id: 'contact' },
 ]
 
-function NavBar() {
+const NavBar = forwardRef((props, ref) => {
   const scrollToSection = useScrollToSection()
 
   return (
     <Navbar expand="lg" fixed="top" className="dreamfilms-nav">
       <Container>
         <Navbar.Brand
+          ref={ref}
           onClick={() => scrollToSection('home')}
           className="brand-logo"
           style={{ cursor: 'pointer' }}
@@ -67,6 +69,6 @@ function NavBar() {
       </Container>
     </Navbar>
   )
-}
+})
 
 export default NavBar
