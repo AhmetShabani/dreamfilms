@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import { FaHome, FaArrowLeft } from 'react-icons/fa'
 import Footer from '../components/Footer'
 import '../assets/styles/portfoliopage.css'
 
@@ -76,11 +77,15 @@ function PortfolioPage() {
       {/* Hero */}
       <div className="portfolio-page-hero">
         <Container>
-          <Link to="/" className="back-link">← Back to Home</Link>
-          <p className="section-tagline">Our Work</p>
-          <h1 className="portfolio-page-title">
-            ALL <span className="text-accent">PROJECTS</span>
-          </h1>
+          <Link to="/" className="back-link">
+            <FaArrowLeft /> <FaHome /> Home
+          </Link>
+          <div className="portfolio-hero-center">
+            <p className="section-tagline">Our Work</p>
+            <h1 className="portfolio-page-title">
+              SOME OF OUR <span className="text-accent">PROJECTS</span>
+            </h1>
+          </div>
         </Container>
       </div>
 
