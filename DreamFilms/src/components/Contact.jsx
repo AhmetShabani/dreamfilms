@@ -114,7 +114,7 @@ function Contact() {
                 <div className="contact-card-icon"><FaPhone /></div>
                 <div>
                   <p className="contact-card-label">Phone</p>
-                  <a href="tel:+38344000000" className="contact-card-value">+383 44 000 000</a>
+                  <a href="tel:+38348222858" className="contact-card-value">+383 48 222 858</a>
                 </div>
               </div>
 
@@ -122,7 +122,7 @@ function Contact() {
                 <div className="contact-card-icon"><FaEnvelope /></div>
                 <div>
                   <p className="contact-card-label">Email</p>
-                  <a href="mailto:info@dreamfilms.com" className="contact-card-value">info@dreamfilms.com</a>
+                  <a href="mailto:info@dreamfilms.com" className="contact-card-value">info@dreamfilms-ks.com</a>
                 </div>
               </div>
 

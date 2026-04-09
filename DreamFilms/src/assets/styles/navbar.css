@@ -21,7 +21,6 @@
   width: auto;
   object-fit: contain;
   vertical-align: middle;
- 
 }
 
 .brand-accent {
@@ -72,13 +71,57 @@
 }
 
 .nav-social-icon {
-  color: rgba(255, 255, 255, 0.75); 
+  color: rgba(255, 255, 255, 0.75);
   font-size: 1.1rem;
   transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .nav-social-icon:hover {
-  color: #E8392A; 
+  color: #E8392A;
+}
+
+.rent-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.rent-dropdown .dropdown-menu {
+  background-color: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0;
+  padding: 0.5rem 0;
+  min-width: 150px;
+  margin-top: 0;
+}
+
+.rent-dropdown-item {
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 0.6rem 1.2rem !important;
+  transition: all 0.3s ease !important;
+}
+
+.rent-dropdown-item:hover {
+  background-color: transparent !important;
+  color: #E8392A !important;
+}
+
+.rent-dropdown-item.active,
+.rent-dropdown-item:active,
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: transparent !important;
+  color: #E8392A !important;
+}
+
+.rent-dropdown .nav-link {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.rent-dropdown .nav-link:hover {
+  color: #E8392A !important;
 }
 
 @media (max-width: 991px) {

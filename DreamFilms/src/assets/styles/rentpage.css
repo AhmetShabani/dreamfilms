@@ -1,0 +1,185 @@
+.rent-page {
+  background-color: #000000;
+  min-height: 100vh;
+  padding-top: 80px;
+}
+
+.rent-page-hero {
+  background-color: #0a0a0a;
+  padding: 3rem 0 2.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.back-link {
+  color: rgba(255, 255, 255, 0.35);
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.back-link:hover {
+  color: #E8392A;
+}
+
+.rent-hero-center {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.rent-page-title {
+  font-size: clamp(1.5rem, 4vw, 2.8rem);
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 3px;
+  margin: 0 0 0.8rem 0;
+}
+
+.rent-page-subtitle {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.85rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.rent-page-filter {
+  margin-bottom: 2.5rem;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.5);
+  padding: 0.5rem 1.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  border-color: #E8392A;
+  color: #E8392A;
+}
+
+.rent-page-grid {
+  padding-bottom: 8rem;
+}
+
+.rent-card {
+  background-color: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: border-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.rent-card:hover {
+  border-color: #E8392A;
+  transform: translateY(-4px);
+}
+
+.rent-card-img-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.rent-card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+  filter: grayscale(20%);
+}
+
+.rent-card:hover .rent-card-img {
+  transform: scale(1.05);
+  filter: grayscale(0%);
+}
+
+.rent-card-category {
+  position: absolute;
+  top: 0.8rem;
+  left: 0.8rem;
+  background-color: #E8392A;
+  color: #ffffff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+}
+
+.rent-card-info {
+  padding: 1rem;
+}
+
+.rent-card-name {
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+  .rent-page-hero {
+    padding: 2.5rem 0 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .rent-page {
+    padding-top: 70px;
+  }
+
+  .rent-page-hero {
+    padding: 2rem 0 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .rent-card-img {
+    height: 180px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .rent-page {
+    padding-top: 65px;
+  }
+
+  .rent-page-hero {
+    padding: 1.5rem 0 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .filter-btn {
+    padding: 0.4rem 0.9rem;
+    font-size: 0.7rem;
+  }
+}

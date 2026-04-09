@@ -31,21 +31,21 @@ function Hero() {
         <div className="hero-stats">
           <div className="stat-item">
             <h3>50<span className="stat-accent">+</span></h3>
-            <p>Films Produced</p>
-          </div>
-          <div className="stat-divider" />
-          <div className="stat-item">
-            <h3>120<span className="stat-accent">+</span></h3>
-            <p>Music Videos</p>
-          </div>
-          <div className="stat-divider" />
-          <div className="stat-item">
-            <h3>8<span className="stat-accent">+</span></h3>
-            <p>Years of Experience</p>
+            <p>TV Shows</p>
           </div>
           <div className="stat-divider" />
           <div className="stat-item">
             <h3>200<span className="stat-accent">+</span></h3>
+            <p>Music Videos</p>
+          </div>
+          <div className="stat-divider" />
+          <div className="stat-item">
+            <h3>10<span className="stat-accent">+</span></h3>
+            <p>Years of Experience</p>
+          </div>
+          <div className="stat-divider" />
+          <div className="stat-item">
+            <h3>150<span className="stat-accent">+</span></h3>
             <p>Happy Clients</p>
           </div>
         </div>

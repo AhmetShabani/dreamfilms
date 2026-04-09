@@ -1,5 +1,6 @@
 import { Container, Row, Col } from 'react-bootstrap'
 import { FaInstagram, FaFacebookF, FaYoutube } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 import '../assets/styles/footer.css'
 
 function Footer() {
@@ -14,7 +15,6 @@ function Footer() {
       <Container>
         <Row className="footer-top g-4">
 
-          {/* Brand */}
           <Col lg={4} md={12} xs={12}>
             <div className="footer-logo">
               DREAMFILMS
@@ -26,35 +26,36 @@ function Footer() {
             </p>
           </Col>
 
-          {/* Navigation */}
           <Col lg={2} md={4} xs={6}>
             <h6 className="footer-heading">Navigation</h6>
             <ul className="footer-links">
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#portfolio">Portfolio</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><Link to="/#home">Home</Link></li>
+              <li><Link to="/#about">About</Link></li>
+              <li><Link to="/#services">Services</Link></li>
+              <li><Link to="/#portfolio">Portfolio</Link></li>
+              <li><Link to="/#contact">Contact</Link></li>
+              <li><Link to="/rent">Rent</Link></li>
             </ul>
           </Col>
 
-          {/* Services */}
           <Col lg={3} md={4} xs={6}>
             <h6 className="footer-heading">Services</h6>
             <ul className="footer-links">
-              <li><a href="#services">Film Production</a></li>
-              <li><a href="#services">Music Videos</a></li>
-              <li><a href="#services">Post Production</a></li>
+              <li><Link to="/#services">Film Production</Link></li>
+              <li><Link to="/#services">Music Videos</Link></li>
+              <li><Link to="/#services">Post Production</Link></li>
+              <li><Link to="/#services">Content Creation</Link></li>
+              <li><Link to="/#services">Live Production</Link></li>
+              <li><Link to="/rent">Equipment Rental</Link></li>
             </ul>
           </Col>
 
-          {/* Contact */}
           <Col lg={3} md={4} xs={12}>
             <h6 className="footer-heading">Contact</h6>
             <ul className="footer-links footer-contact">
               <li>📍 Prishtina, Kosovo</li>
-              <li>📞 +383 00 000 000</li>
-              <li>✉️ hello@dreamfilms.com</li>
+              <li>📞 +383 48 222 858</li>
+              <li>✉️ info@dreamfilms-ks.com</li>
             </ul>
             <div className="footer-socials">
               {socials.map((social) => (

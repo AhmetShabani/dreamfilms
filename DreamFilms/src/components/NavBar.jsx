@@ -1,6 +1,7 @@
-import { forwardRef } from 'react'
-import { Navbar, Nav, Container } from 'react-bootstrap'
+import { forwardRef, useState, useRef } from 'react'
+import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap'
 import { FaInstagram, FaFacebookF, FaYoutube } from 'react-icons/fa'
+import { Link, useNavigate } from 'react-router-dom'
 import useScrollToSection from '../hooks/useScrollToSection'
 import '../assets/styles/navbar.css'
 
@@ -17,8 +18,28 @@ const navLinks = [
   { label: 'Contact Us', id: 'contact' },
 ]
 
+const rentItems = [
+  { label: 'Camera', path: '/rent/camera' },
+  { label: 'Lighting', path: '/rent/lighting' },
+  { label: 'Grip', path: '/rent/grip' },
+]
+
 const NavBar = forwardRef((props, ref) => {
   const scrollToSection = useScrollToSection()
+  const navigate = useNavigate()
+  const [rentOpen, setRentOpen] = useState(false)
+  const timeoutRef = useRef(null)
+
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current)
+    setRentOpen(true)
+  }
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setRentOpen(false)
+    }, 200)
+  }
 
   return (
     <Navbar expand="lg" fixed="top" className="dreamfilms-nav">
@@ -48,6 +69,30 @@ const NavBar = forwardRef((props, ref) => {
                 {label}
               </Nav.Link>
             ))}
+            <div
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              <NavDropdown
+                title="Rent"
+                id="rent-dropdown"
+                className="rent-dropdown"
+                show={rentOpen}
+                onClick={() => navigate('/rent')}
+              >
+                {rentItems.map(({ label, path }) => (
+                  <NavDropdown.Item
+                    key={label}
+                    as={Link}
+                    to={path}
+                    className="rent-dropdown-item"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    {label}
+                  </NavDropdown.Item>
+                ))}
+              </NavDropdown>
+            </div>
           </Nav>
 
           <div className="nav-socials">
@@ -58,7 +103,7 @@ const NavBar = forwardRef((props, ref) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="nav-social-icon d-flex align-items-center"
+                className="nav-social-icon"
               >
                 {icon}
               </a>

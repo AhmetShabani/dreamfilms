@@ -10,6 +10,7 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import PortfolioPage from './pages/PortfolioPage'
 import LoadingScreen from './components/LoadingScreen'
+import RentPage from './pages/RentPage'
 
 function App() {
   const [loading, setLoading] = useState(true)
@@ -42,6 +43,8 @@ function App() {
           </>
         } />
         <Route path="/portfolio" element={<PortfolioPage />} />
+        <Route path="/rent" element={<RentPage />} />
+        <Route path="/rent/:category" element={<RentPage />} />
       </Routes>
     </BrowserRouter>
   )
