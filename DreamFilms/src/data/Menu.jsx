@@ -1,3 +1,4 @@
+import { FaInstagram,FaFacebookF } from 'react-icons/fa'
 // ── Camera ──
 import sonyFx3 from '../assets/dream_rental/camera/sony-fx3.jpg'
 import redKomodo from '../assets/dream_rental/camera/red-komodo.jpg'
@@ -59,6 +60,7 @@ import smokeMachine700w from '../assets/dream_rental/smoke-machine/smoke-machine
 // ── Power ──
 import hondaEu2000 from '../assets/dream_rental/power/honda-eu-2000is18kw.jpg'
 import hondaEu3000 from '../assets/dream_rental/power/honda-eu3000is-3kw.webp'
+import schepach from '../assets/dream_rental/power/scheppach-18kw.png'
 
 
 //RENT PAGE
@@ -124,6 +126,7 @@ export const equipment = [
   // Power
   { id: 45, category: 'Power', name: 'Honda EU2000i Generator 1.8kW', image: hondaEu2000 },
   { id: 46, category: 'Power', name: 'Honda EU3000i Generator 3kW', image: hondaEu3000 },
+  { id: 47, category: 'Power', name: 'Scheppach 18kW Generator', image: schepach}
 ]
 
 export const filters = [
@@ -292,6 +295,11 @@ export const navLinks = [
 
 export const rentItems = [
   { label: 'Camera', path: '/rent/camera' },
+  { label: 'Camera Accessories', path: '/rent/camera-accessories' },
+  { label: 'Lenses', path: '/rent/lenses' },
   { label: 'Lighting', path: '/rent/lighting' },
+  { label: 'Diffusers', path: '/rent/diffusers' },
   { label: 'Grip', path: '/rent/grip' },
+  { label: 'Power', path: '/rent/power' },
+  { label: 'Smoke Machine', path: '/rent/smoke-machine' },
 ]

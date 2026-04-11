@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap'
 import { Link, useParams } from 'react-router-dom'
 import { FaArrowLeft, FaHome, FaSearch } from 'react-icons/fa'
 import Footer from '../components/Footer'
+import RentModal from '../components/RentModal'
 import '../assets/styles/rentpage.css'
 import { equipment, filters } from '../data/Menu'
 
@@ -11,11 +12,13 @@ function RentPage() {
   const [activeFilter, setActiveFilter] = useState('All')
   const [search, setSearch] = useState('')
   const [expandedCategories, setExpandedCategories] = useState({})
+  const [selectedItems, setSelectedItems] = useState([])
+  const [showModal, setShowModal] = useState(false)
 
   useEffect(() => {
     if (category) {
       const matched = filters.find(
-        (f) => f.toLowerCase() === category.toLowerCase()
+        (f) => f.toLowerCase().replace(/\s+/g, '-') === category.toLowerCase()
       )
       if (matched) setActiveFilter(matched)
     } else {
@@ -33,6 +36,16 @@ function RentPage() {
     setExpandedCategories({})
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
+
+  const toggleSelect = (item) => {
+    setSelectedItems((prev) =>
+      prev.find((i) => i.id === item.id)
+        ? prev.filter((i) => i.id !== item.id)
+        : [...prev, item]
+    )
+  }
+
+  const isSelected = (item) => selectedItems.some((i) => i.id === item.id)
 
   const baseFiltered = activeFilter === 'All'
     ? equipment
@@ -57,10 +70,16 @@ function RentPage() {
 
   const renderCard = (item) => (
     <Col lg={3} md={4} sm={6} xs={12} key={item.id} className="d-flex">
-      <div className="rent-card w-100">
+      <div
+        className={`rent-card w-100 ${isSelected(item) ? 'selected' : ''}`}
+        onClick={() => toggleSelect(item)}
+      >
         <div className="rent-card-img-wrapper">
           <img src={item.image} alt={item.name} className="rent-card-img" />
           <div className="rent-card-category">{item.category}</div>
+          {isSelected(item) && (
+            <div className="rent-card-check">✓</div>
+          )}
         </div>
         <div className="rent-card-info">
           <h5 className="rent-card-name">{item.name}</h5>
@@ -71,6 +90,22 @@ function RentPage() {
 
   return (
     <div className="rent-page">
+
+      {/* Floating Rent Button */}
+      {selectedItems.length > 0 && (
+        <div className="rent-float-btn" onClick={() => setShowModal(true)}>
+          Rent Selected ({selectedItems.length})
+        </div>
+      )}
+
+      {/* Modal */}
+      <RentModal
+        show={showModal}
+        onHide={() => setShowModal(false)}
+        selectedItems={selectedItems}
+        onSuccess={() => setSelectedItems([])}
+        onRemove={(id) => setSelectedItems((prev) => prev.filter((i) => i.id !== id))}
+      />
 
       {/* Hero */}
       <div className="rent-page-hero">
@@ -122,7 +157,6 @@ function RentPage() {
       {/* Grid */}
       <Container className="rent-page-grid">
 
-        {/* Search results — flat list, no limit */}
         {search.trim() !== '' && (
           <>
             <p className="rent-results-count">
@@ -137,7 +171,6 @@ function RentPage() {
           </>
         )}
 
-        {/* All view — grouped, max 4 per category */}
         {search.trim() === '' && isAllView && grouped.map(({ category, items }) => {
           const isExpanded = expandedCategories[category]
           const visibleItems = isExpanded ? items : items.slice(0, 4)
@@ -174,7 +207,6 @@ function RentPage() {
           )
         })}
 
-        {/* Single category view — show all */}
         {search.trim() === '' && !isAllView && (
           <Row className="g-3 g-md-4">
             {searched.map(renderCard)}

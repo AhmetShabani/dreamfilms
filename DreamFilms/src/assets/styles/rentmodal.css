@@ -1,0 +1,173 @@
+.rent-modal .modal-content {
+  background-color: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0;
+}
+
+.rent-modal-body {
+  padding: 2.5rem;
+  position: relative;
+}
+
+.rent-modal-close {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  line-height: 1;
+}
+
+.rent-modal-close:hover {
+  color: #E8392A;
+}
+
+.rent-modal-title {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+}
+
+.rent-modal-selected {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  max-height: 220px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.rent-modal-selected::-webkit-scrollbar {
+  width: 4px;
+}
+
+.rent-modal-selected::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.rent-modal-selected::-webkit-scrollbar-thumb {
+  background: #E8392A;
+}
+
+.rent-modal-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 0.6rem 0.8rem;
+}
+
+.rent-modal-item-img {
+  width: 50px;
+  height: 40px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.rent-modal-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.rent-modal-item-category {
+  color: #E8392A;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.rent-modal-item-name {
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.rent-modal-form {
+  margin-top: 1rem;
+}
+
+.rent-modal-submit {
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  padding: 0.9rem;
+}
+
+.rent-modal-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.rent-modal-error {
+  color: #E8392A;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.rent-modal-success {
+  text-align: center;
+  padding: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.success-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #E8392A;
+  color: #ffffff;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rent-modal-success h4 {
+  color: #ffffff;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.rent-modal-success p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+  margin: 0;
+}
+.rent-modal-remove {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.8rem;
+  cursor: pointer;
+  margin-left: auto;
+  padding: 0.2rem 0.4rem;
+  transition: color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.rent-modal-remove:hover {
+  color: #E8392A;
+}
+
+@media (max-width: 768px) {
+  .rent-modal-body {
+    padding: 1.5rem;
+  }
+}

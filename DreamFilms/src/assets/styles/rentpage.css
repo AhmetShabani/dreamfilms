@@ -293,6 +293,47 @@
   border-color: #E8392A;
   color: #E8392A;
 }
+.rent-card.selected {
+  border-color: #E8392A;
+}
+
+.rent-card-check {
+  position: absolute;
+  top: 0.8rem;
+  right: 0.8rem;
+  width: 24px;
+  height: 24px;
+  background-color: #E8392A;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.rent-float-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: #E8392A;
+  color: #ffffff;
+  padding: 1rem 2rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  z-index: 999;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 20px rgba(232, 57, 42, 0.4);
+}
+
+.rent-float-btn:hover {
+  background-color: #c42d20;
+  transform: translateY(-2px);
+}
 
 /* Tablet */
 @media (max-width: 991px) {
