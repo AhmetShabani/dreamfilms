@@ -1,15 +1,10 @@
 import { Container, Row, Col } from 'react-bootstrap'
-import { FaInstagram, FaFacebookF, FaYoutube } from 'react-icons/fa'
+import { FaInstagram, FaFacebookF } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import '../assets/styles/footer.css'
+import { socials } from '../data/Menu'
 
 function Footer() {
-  const socials = [
-    { icon: <FaInstagram />, href: 'https://instagram.com/dreamfilms.ks', label: 'Instagram' },
-    { icon: <FaFacebookF />, href: 'https://www.facebook.com/DreamFilms.ks', label: 'Facebook' },
-    { icon: <FaYoutube />, href: 'https://youtube.com/', label: 'YouTube' },
-  ]
-
   return (
     <footer className="footer-section">
       <Container>

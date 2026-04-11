@@ -1,28 +1,10 @@
 import { forwardRef, useState, useRef } from 'react'
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap'
-import { FaInstagram, FaFacebookF, FaYoutube } from 'react-icons/fa'
+import { FaInstagram, FaFacebookF } from 'react-icons/fa'
 import { Link, useNavigate } from 'react-router-dom'
 import useScrollToSection from '../hooks/useScrollToSection'
 import '../assets/styles/navbar.css'
-
-const socials = [
-  { icon: <FaInstagram />, href: 'https://instagram.com/dreamfilms.ks', label: 'Instagram' },
-  { icon: <FaFacebookF />, href: 'https://www.facebook.com/DreamFilms.ks', label: 'Facebook' },
-  { icon: <FaYoutube />, href: 'https://youtube.com/', label: 'YouTube' },
-]
-
-const navLinks = [
-  { label: 'About', id: 'about' },
-  { label: 'Services', id: 'services' },
-  { label: 'Portfolio', id: 'portfolio' },
-  { label: 'Contact Us', id: 'contact' },
-]
-
-const rentItems = [
-  { label: 'Camera', path: '/rent/camera' },
-  { label: 'Lighting', path: '/rent/lighting' },
-  { label: 'Grip', path: '/rent/grip' },
-]
+import { socials, navLinks, rentItems } from '../data/Menu'
 
 const NavBar = forwardRef((props, ref) => {
   const scrollToSection = useScrollToSection()
@@ -103,7 +85,7 @@ const NavBar = forwardRef((props, ref) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="nav-social-icon"
+                className="nav-social-icon d-flex align-items-start"
               >
                 {icon}
               </a>

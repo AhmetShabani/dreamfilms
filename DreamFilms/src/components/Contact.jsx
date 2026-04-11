@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import emailjs from '@emailjs/browser'
-import { FaPhone, FaEnvelope, FaInstagram, FaFacebookF, FaYoutube } from 'react-icons/fa'
+import { FaPhone, FaEnvelope, FaInstagram, FaFacebookF } from 'react-icons/fa'
 import '../assets/styles/contact.css'
 
 const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
@@ -11,7 +11,6 @@ const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 const socials = [
   { icon: <FaInstagram />, href: 'https://instagram.com/yourhandle', label: 'Instagram' },
   { icon: <FaFacebookF />, href: 'https://facebook.com/yourpage', label: 'Facebook' },
-  { icon: <FaYoutube />, href: 'https://youtube.com/yourchannel', label: 'YouTube' },
 ]
 
 function Contact() {

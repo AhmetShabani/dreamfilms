@@ -4,63 +4,7 @@ import { Link } from 'react-router-dom'
 import { FaHome, FaArrowLeft } from 'react-icons/fa'
 import Footer from '../components/Footer'
 import '../assets/styles/portfoliopage.css'
-
-const allProjects = [
-  {
-    id: 1,
-    type: 'Film',
-    title: 'Into The Shadows',
-    image: 'https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=800&q=80',
-  },
-  {
-    id: 2,
-    type: 'Music Video',
-    title: 'Neon Nights',
-    image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80',
-  },
-  {
-    id: 3,
-    type: 'Film',
-    title: 'The Last Frame',
-    image: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&q=80',
-  },
-  {
-    id: 4,
-    type: 'Music Video',
-    title: 'Pulse',
-    image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&q=80',
-  },
-  {
-    id: 5,
-    type: 'Film',
-    title: 'Broken Silence',
-    image: 'https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=800&q=80',
-  },
-  {
-    id: 6,
-    type: 'Music Video',
-    title: 'Rise Up',
-    image: 'https://images.unsplash.com/photo-1429514513361-8fa32282fd5f?w=800&q=80',
-  },
-  {
-    id: 7,
-    type: 'Film',
-    title: 'Silent Roads',
-    image: 'https://images.unsplash.com/photo-1500099817043-86d46000d58f?w=800&q=80',
-  },
-  {
-    id: 8,
-    type: 'Music Video',
-    title: 'Dark Hours',
-    image: 'https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800&q=80',
-  },
-  {
-    id: 9,
-    type: 'Film',
-    title: 'The Return',
-    image: 'https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=800&q=80',
-  },
-]
+import {allProjects} from "../data/Menu"
 
 const filters = ['All', 'Film', 'Music Video']
 
