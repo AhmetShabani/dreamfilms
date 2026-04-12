@@ -103,17 +103,25 @@
   transition: all 0.3s ease !important;
 }
 
-.rent-dropdown-item:hover {
-  background-color: transparent !important;
-  color: #E8392A !important;
-}
-
+.rent-dropdown-item:hover,
+.rent-dropdown-item:focus,
 .rent-dropdown-item.active,
 .rent-dropdown-item:active,
+.dropdown-item:hover,
+.dropdown-item:focus,
 .dropdown-item.active,
 .dropdown-item:active {
-  background-color: transparent !important;
+  background-color: rgba(232, 57, 42, 0.08) !important;
   color: #E8392A !important;
+  border-left: 2px solid #E8392A;
+  padding-left: calc(1.2rem - 2px) !important;
+}
+
+.rent-dropdown-item:not(:hover):not(:active):not(.active):not(:focus) {
+  background-color: transparent !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+  border-left: none;
+  padding-left: 1.2rem !important;
 }
 
 .rent-dropdown .nav-link {

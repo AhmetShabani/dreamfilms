@@ -41,7 +41,7 @@ function Portfolio() {
         {/* See More */}
         <Row className="mt-5">
           <Col xs={12} className="text-center">
-            <Link to="/portfolio" className="btn-primary-custom">
+            <Link to="/portfolio" className="btn-primary-custom" onClick={() => {window.scrollTo(0, 0)}}>
               See More
             </Link>
           </Col>

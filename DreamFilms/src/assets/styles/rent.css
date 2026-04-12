@@ -1,0 +1,185 @@
+.rent-section {
+  background-color: #000000;
+  padding: 8rem 0;
+}
+
+.rent-section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -1px;
+  margin-bottom: 1rem;
+}
+
+.rent-section-subtitle {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* ── Category Group ── */
+.rent-teaser-group {
+  margin-bottom: 4rem;
+}
+
+.rent-teaser-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.rent-teaser-category {
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.rent-teaser-viewall {
+  background: none;
+  border: none;
+  color: #E8392A;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0;
+  transition: opacity 0.2s ease;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.rent-teaser-viewall:hover {
+  opacity: 0.7;
+}
+
+/* ── Cards ── */
+.rent-teaser-card {
+  background-color: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.rent-teaser-card:hover {
+  border-color: #E8392A;
+  transform: translateY(-4px);
+}
+
+/* View More Badge */
+.rent-teaser-badge {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  background-color: #E8392A;
+  color: #ffffff;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 0.25rem 0.5rem;
+  border-radius: 2px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.rent-teaser-img-wrapper {
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.rent-teaser-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+  filter: grayscale(20%);
+}
+
+.rent-teaser-card:hover .rent-teaser-img {
+  transform: scale(1.05);
+  filter: grayscale(0%);
+}
+
+.rent-teaser-info {
+  padding: 0.85rem 1rem;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.rent-teaser-name {
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.4;
+}
+
+/* ── Tablet ── */
+@media (max-width: 991px) {
+  .rent-section {
+    padding: 5rem 0;
+  }
+
+  .rent-teaser-group {
+    margin-bottom: 3rem;
+  }
+
+  .rent-teaser-img {
+    height: 160px;
+  }
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .rent-section {
+    padding: 4rem 0;
+  }
+
+  .rent-teaser-card:hover {
+    transform: none;
+  }
+
+  .rent-teaser-img {
+    height: 140px;
+  }
+
+  .rent-teaser-name {
+    font-size: 0.75rem;
+  }
+}
+
+/* ── Small mobile ── */
+@media (max-width: 480px) {
+  .rent-section {
+    padding: 3rem 0;
+  }
+
+  .rent-teaser-img {
+    height: 120px;
+  }
+
+  .rent-teaser-group {
+    margin-bottom: 2.5rem;
+  }
+}

@@ -11,6 +11,7 @@ import Footer from './components/Footer'
 import PortfolioPage from './pages/PortfolioPage'
 import LoadingScreen from './components/LoadingScreen'
 import RentPage from './pages/RentPage'
+import Rent from './components/Rent'
 
 function App() {
   const [loading, setLoading] = useState(true)
@@ -38,6 +39,7 @@ function App() {
             <About />
             <Services />
             <Portfolio />
+            <Rent />
             <Contact />
             <Footer />
           </>

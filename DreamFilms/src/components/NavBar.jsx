@@ -60,7 +60,7 @@ const NavBar = forwardRef((props, ref) => {
                 id="rent-dropdown"
                 className="rent-dropdown"
                 show={rentOpen}
-                onClick={() => navigate('/rent')}
+                onClick={() => scrollToSection('rent')}
               >
                 {rentItems.map(({ label, path }) => (
                   <NavDropdown.Item
@@ -68,7 +68,10 @@ const NavBar = forwardRef((props, ref) => {
                     as={Link}
                     to={path}
                     className="rent-dropdown-item"
-                    onClick={(e) => e.stopPropagation()}
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      window.scrollTo(0, 0)
+                    }}
                   >
                     {label}
                   </NavDropdown.Item>

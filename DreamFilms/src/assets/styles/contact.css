@@ -184,6 +184,104 @@ a.contact-card-value:hover {
 .contact-status.success { color: #4caf50; }
 .contact-status.error { color: #E8392A; }
 
+/* ── Modal ── */
+.contact-modal-content {
+  background-color: #111111 !important;
+  border: 1px solid #E8392A !important;
+  border-radius: 4px !important;
+}
+
+.contact-modal-header {
+  background-color: #111111 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07) !important;
+  padding: 1.25rem 1.5rem !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contact-modal-title {
+  color: #ffffff !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  margin: 0 !important;
+}
+
+.contact-modal-close {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  padding: 0;
+  line-height: 1;
+}
+
+.contact-modal-close:hover {
+  color: #E8392A;
+}
+
+.contact-modal-body {
+  background-color: #111111 !important;
+  padding: 1.5rem !important;
+}
+
+.contact-modal-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contact-modal-item {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.contact-modal-item::before {
+  content: '—';
+  color: #E8392A;
+  position: absolute;
+  left: 0;
+}
+
+.contact-modal-footer {
+  background-color: #111111 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.07) !important;
+  padding: 1rem 1.5rem !important;
+  justify-content: center !important;
+}
+
+.contact-modal-content.success {
+  border-color: #4caf50 !important;
+}
+
+.contact-btn-success {
+  background-color: #4caf50;
+  color: #ffffff;
+  border: none;
+  padding: 0.85rem 2.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-btn-success:hover {
+  background-color: #3d8b40;
+}
+
 /* ── Tablet ── */
 @media (max-width: 991px) {
   .contact-section {
