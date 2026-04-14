@@ -2,7 +2,7 @@
   position: relative;
   min-height: 100vh;
   background-color: #000000;
-  background-image: url('https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1600&q=80');
+  background-image: url('/bg.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -10,7 +10,7 @@
   align-items: center;
 }
 
-/* Disable fixed attachment on mobile (causes bugs on iOS) */
+
 @media (max-width: 768px) {
   .hero-section {
     background-attachment: scroll;

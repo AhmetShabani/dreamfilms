@@ -3,15 +3,13 @@ import { Container, Row, Col, Modal } from 'react-bootstrap'
 import emailjs from '@emailjs/browser'
 import { FaPhone, FaEnvelope, FaInstagram, FaFacebookF } from 'react-icons/fa'
 import '../assets/styles/contact.css'
+import { socials } from '../data/Menu' 
 
 const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
 const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
 const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 
-const socials = [
-  { icon: <FaInstagram />, href: 'https://instagram.com/yourhandle', label: 'Instagram' },
-  { icon: <FaFacebookF />, href: 'https://facebook.com/yourpage', label: 'Facebook' },
-]
+
 
 const validateEmail = (email) =>
   /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())
