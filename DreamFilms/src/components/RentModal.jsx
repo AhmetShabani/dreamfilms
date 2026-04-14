@@ -3,16 +3,59 @@ import { Modal, Row, Col } from 'react-bootstrap'
 import emailjs from '@emailjs/browser'
 import '../assets/styles/rentmodal.css'
 
-function RentModal({ show, onHide, selectedItems , onSuccess , onRemove}) {
+const validateName = (name) =>
+  name.trim().length >= 2 && /^[a-zA-Z\s'-]+$/.test(name.trim())
+
+const validateEmail = (email) =>
+  /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())
+
+const validatePhone = (phone) =>
+  phone.trim() === '' || /^[+\d\s\-()]{7,20}$/.test(phone.trim())
+
+function RentModal({ show, onHide, selectedItems, onSuccess, onRemove }) {
   const formRef = useRef()
   const [sending, setSending] = useState(false)
   const [sent, setSent] = useState(false)
-  const [error, setError] = useState(false)
+  const [validationErrors, setValidationErrors] = useState([])
+
+  const validate = () => {
+    const errors = []
+    const form = formRef.current
+
+    if (!form.from_name.value.trim()) {
+      errors.push('Name is required.')
+    } else if (!validateName(form.from_name.value)) {
+      errors.push('Name must be at least 2 characters and contain only letters.')
+    }
+
+    if (!form.from_email.value.trim()) {
+      errors.push('Email is required.')
+    } else if (!validateEmail(form.from_email.value)) {
+      errors.push('Please enter a valid email address (e.g. name@example.com).')
+    }
+
+    if (!validatePhone(form.phone.value)) {
+      errors.push('Phone number must be between 7 and 20 digits.')
+    }
+
+    if (selectedItems.length === 0) {
+      errors.push('Please select at least one item to rent.')
+    }
+
+    return errors
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    setValidationErrors([])
+
+    const errors = validate()
+    if (errors.length > 0) {
+      setValidationErrors(errors)
+      return
+    }
+
     setSending(true)
-    setError(false)
 
     const groupedByCategory = selectedItems.reduce((acc, item) => {
       if (!acc[item.category]) acc[item.category] = []
@@ -22,7 +65,7 @@ function RentModal({ show, onHide, selectedItems , onSuccess , onRemove}) {
 
     const selectedList = Object.entries(groupedByCategory)
       .map(([cat, items]) =>
-        `[ ${cat.toUpperCase()} ]\n${items.map(name => `  • ${name}`).join('\n')}`
+        `[ ${cat.toUpperCase()} ]\n${items.map((name) => `  • ${name}`).join('\n')}`
       )
       .join('\n\n')
 
@@ -31,10 +74,10 @@ function RentModal({ show, onHide, selectedItems , onSuccess , onRemove}) {
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         {
-          from_name: formRef.current.from_name.value,
-          from_email: formRef.current.from_email.value,
-          phone: formRef.current.phone.value,
-          message: formRef.current.message.value,
+          from_name: formRef.current.from_name.value.trim(),
+          from_email: formRef.current.from_email.value.trim(),
+          phone: formRef.current.phone.value.trim() || 'Not provided',
+          message: formRef.current.message.value.trim() || 'No additional details.',
           selected_items: selectedList,
         },
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
@@ -42,16 +85,15 @@ function RentModal({ show, onHide, selectedItems , onSuccess , onRemove}) {
       setSent(true)
       onSuccess()
     } catch (err) {
-      setError(true)
+      setValidationErrors(['Something went wrong while sending. Please try again.'])
     } finally {
       setSending(false)
     }
-
   }
 
   const handleClose = () => {
     setSent(false)
-    setError(false)
+    setValidationErrors([])
     onHide()
   }
 
@@ -71,26 +113,28 @@ function RentModal({ show, onHide, selectedItems , onSuccess , onRemove}) {
         ) : (
           <>
             <p className="section-tagline">Rental Request</p>
-            <h4 className="rent-modal-title">YOUR SELECTED <span className="text-accent">GEAR</span></h4>
+            <h4 className="rent-modal-title">
+              YOUR SELECTED <span className="text-accent">GEAR</span>
+            </h4>
 
             <div className="rent-modal-selected">
-                {selectedItems.map((item) => (
-                    <div key={item.id} className="rent-modal-item">
-                    <img src={item.image} alt={item.name} className="rent-modal-item-img" />
-                    <div className="rent-modal-item-info">
-                        <span className="rent-modal-item-category">{item.category}</span>
-                        <span className="rent-modal-item-name">{item.name}</span>
-                    </div>
-                    <button
-                        className="rent-modal-remove"
-                        onClick={() => onRemove(item.id)}
-                        type="button"
-                    >
-                        ✕
-                    </button>
-                    </div>
-                ))}
+              {selectedItems.map((item) => (
+                <div key={item.id} className="rent-modal-item">
+                  <img src={item.image} alt={item.name} className="rent-modal-item-img" />
+                  <div className="rent-modal-item-info">
+                    <span className="rent-modal-item-category">{item.category}</span>
+                    <span className="rent-modal-item-name">{item.name}</span>
+                  </div>
+                  <button
+                    className="rent-modal-remove"
+                    onClick={() => onRemove(item.id)}
+                    type="button"
+                  >
+                    ✕
+                  </button>
                 </div>
+              ))}
+            </div>
 
             <form ref={formRef} onSubmit={handleSubmit} className="rent-modal-form">
               <Row className="g-3">
@@ -100,7 +144,6 @@ function RentModal({ show, onHide, selectedItems , onSuccess , onRemove}) {
                     name="from_name"
                     className="contact-input"
                     placeholder="Your Name"
-                    required
                   />
                 </Col>
                 <Col md={6}>
@@ -109,7 +152,6 @@ function RentModal({ show, onHide, selectedItems , onSuccess , onRemove}) {
                     name="from_email"
                     className="contact-input"
                     placeholder="Your Email"
-                    required
                   />
                 </Col>
                 <Col md={12}>
@@ -117,7 +159,7 @@ function RentModal({ show, onHide, selectedItems , onSuccess , onRemove}) {
                     type="tel"
                     name="phone"
                     className="contact-input"
-                    placeholder="Your Phone Number"
+                    placeholder="Your Phone Number (optional)"
                   />
                 </Col>
                 <Col md={12}>
@@ -129,23 +171,26 @@ function RentModal({ show, onHide, selectedItems , onSuccess , onRemove}) {
                   />
                 </Col>
                 <Col md={12}>
-                  {error && (
-                    <p className="rent-modal-error">
-                      Something went wrong. Please try again.
-                    </p>
+
+                  {/* Validation Errors */}
+                  {validationErrors.length > 0 && (
+                    <div className="rent-modal-errors">
+                      <p className="rent-modal-errors-title">Please fix the following:</p>
+                      <ul className="rent-modal-errors-list">
+                        {validationErrors.map((err, i) => (
+                          <li key={i} className="rent-modal-errors-item">{err}</li>
+                        ))}
+                      </ul>
+                    </div>
                   )}
-                    {selectedItems.length === 0 && (
-                    <p className="rent-modal-error">
-                        Please select at least one item to rent.
-                    </p>
-                    )}
+
                   <button
                     type="submit"
                     className="btn-primary-custom rent-modal-submit"
-                    disabled={sending || selectedItems.length === 0}
-                    >
+                    disabled={sending}
+                  >
                     {sending ? 'Sending...' : 'Send Rental Request'}
-                    </button>
+                  </button>
                 </Col>
               </Row>
             </form>
