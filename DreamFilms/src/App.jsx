@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import NavBar from './components/NavBar'
 import Hero from './components/Hero'
 import Showreel from './components/Showreel'
@@ -28,7 +28,7 @@ function App() {
   }, [])
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       {visible && <LoadingScreen fadeOut={!loading} navRef={navRef} />}
       <NavBar ref={navRef} />
       <Routes>
@@ -48,7 +48,7 @@ function App() {
         <Route path="/rent" element={<RentPage />} />
         <Route path="/rent/:category" element={<RentPage />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
