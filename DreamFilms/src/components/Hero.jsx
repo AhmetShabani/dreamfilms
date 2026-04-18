@@ -1,7 +1,10 @@
 import { Container, Row, Col } from 'react-bootstrap'
+import useScrollToSection from '../hooks/useScrollToSection'
 import '../assets/styles/hero.css'
 
 function Hero() {
+  const scrollToSection = useScrollToSection()
+
   return (
     <section className="hero-section" id="home">
       <div className="hero-overlay" />
@@ -18,12 +21,18 @@ function Hero() {
               visual stories that leave a lasting impression.
             </p>
             <div className="hero-buttons">
-              <a href="#portfolio" className="btn-primary-custom">
+              <button
+                className="btn-primary-custom"
+                onClick={() => scrollToSection('portfolio')}
+              >
                 View Our Work
-              </a>
-              <a href="#contact" className="btn-outline-custom">
+              </button>
+              <button
+                className="btn-outline-custom"
+                onClick={() => scrollToSection('contact')}
+              >
                 Get In Touch
-              </a>
+              </button>
             </div>
           </Col>
         </Row>
